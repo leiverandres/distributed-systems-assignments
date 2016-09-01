@@ -32,6 +32,7 @@ class DB(object):
             return json.load(f)
         except IOError:
             self.write({})
+            return {}
 
 # Se definen las funciones que estarán al lado del servidor
 class Operations:
