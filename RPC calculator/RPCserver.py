@@ -14,6 +14,8 @@ secret = {
     # 'leiverandres': 'string cifrado'
 }
 
+db = None
+
 def token_generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
@@ -120,10 +122,10 @@ class Operations:
             return json.dumps({'response': 'fail', 'message': 'User already exists'})
 
 def main():
-    global users
+    global users, db
     # Se le dice al servidor que acepte peticiones por la ip y puerto especificados.
     port = 8000
-    server = SimpleXMLRPCServer(('192.168.0.108', port))
+    server = SimpleXMLRPCServer(('192.168.11.113', port))
     server.register_introspection_functions()
 
     # Para permitir llamadas remotas es necesario registrar las funciones
