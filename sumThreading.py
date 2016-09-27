@@ -16,7 +16,7 @@ def sum(l, r):
 
 if __name__ == "__main__":
 	threads = list()
-	lim = 104
+	lim = 1000
 	n_threads = 5
 	size = lim / n_threads
 	offset = lim % n_threads
